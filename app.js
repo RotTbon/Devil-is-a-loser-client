@@ -5,7 +5,11 @@
    - chat via signaling server (broadcast)
    ***************** */
 
-const WS_URL = (location.protocol === 'https:' ? 'wss://' : 'ws://') + "devil-is-a-loser.onrender.com";
+const WS_URL = (location.protocol === 'https:' ? 'wss://' : 'ws://') 
+  + location.host + "/ws";
+
+const ws = new WebSocket(WS_URL);
+
 const ws = new WebSocket(WS_URL);
 
 let localStream = null;
