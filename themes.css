@@ -1,0 +1,26 @@
+/* Light */
+.theme-modern-light{
+  --bg:#f5f7fb;
+  --panel:#ffffff;
+  --muted:#7b8897;
+  --accent:#6b7cff;
+  --text:#0f1724;
+}
+
+/* Dark */
+.theme-modern-dark{
+  --bg:#0b0f14;
+  --panel:#0f1724;
+  --muted:#9aa5b1;
+  --accent:#7c8cff;
+  --text:#e6eef8;
+}
+
+/* Accent */
+.theme-modern-accent{
+  --bg:#0f1724;
+  --panel:#0b1220;
+  --muted:#9fb2d9;
+  --accent:#8a6bff;
+  --text:#eaf0ff;
+}
