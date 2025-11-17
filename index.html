@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EnesChat (Prototip)</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="themes.css" />
+
+  <!-- simple-peer (WebRTC helper) -->
+  <script src="https://unpkg.com/simple-peer@9.11.1/simplepeer.min.js"></script>
+</head>
+<body class="theme-modern-light">
+  <div id="app">
+    <aside id="leftbar">
+      <div class="profile">
+        <div id="avatarPreview" class="avatar"></div>
+        <div class="meta">
+          <input id="username" placeholder="Kullanıcı adı (örn: Enes)" />
+          <div class="small">Durum: <span id="statusText">Hazır</span></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label for="themeSelect">Tema:</label>
+        <select id="themeSelect">
+          <option value="theme-modern-light">Modern Light</option>
+          <option value="theme-modern-dark">Modern Dark</option>
+          <option value="theme-modern-accent">Blue / Purple Accent</option>
+        </select>
+
+        <label for="avatarFile">Avatar yükle</label>
+        <input id="avatarFile" type="file" accept="image/*"/>
+
+        <button id="joinBtn" class="primary">Odaya Katıl</button>
+        <button id="leaveBtn" class="danger" disabled>Odadan Çık</button>
+      </div>
+
+      <div class="info">
+        <h4>Oda</h4>
+        <div id="roomName">#genel</div>
+        <h4>Online</h4>
+        <ul id="usersList"></ul>
+      </div>
+    </aside>
+
+    <main id="main">
+      <header id="mainHeader">
+        <div class="title">#genel</div>
+        <div class="actions">
+          <button id="toggleMic">Mikrofon Aç</button>
+          <button id="muteAll" title="Tümünü sustur" disabled>Hepsini Sustur</button>
+        </div>
+      </header>
+
+      <section id="chatArea">
+        <div id="messages"></div>
+      </section>
+
+      <footer id="composer">
+        <input id="msgInput" placeholder="Mesaj yaz (enter ile gönder)..." />
+        <button id="sendMsg">Gönder</button>
+      </footer>
+    </main>
+
+    <aside id="rightbar">
+      <h4>Sesli Katılımcılar</h4>
+      <div id="audioPeers"></div>
+
+      <h4>Bilgi</h4>
+      <div class="help">
+        <p>Prototip: tarayıcı tabanlı ses (WebRTC mesh). İzin isteyecektir.</p>
+        <p>Test: İki farklı cihaz veya iki farklı tarayıcı penceresi açın.</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
